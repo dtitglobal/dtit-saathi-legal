@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<!--
+  Saathi Terms of Service
+  DRAFT prepared 2026-07-16 for DT IT Solutions Private Limited.
+  IMPORTANT: Have this reviewed by a qualified lawyer (India — Companies Act 2013,
+  DPDP Act 2023, Consumer Protection Act 2019, IT Act 2000 / Intermediary Rules)
+  before publishing. This is a founder draft to reduce legal review cost, NOT
+  legal advice. Replace any bracketed placeholders. Keep in sync with the
+  Privacy Policy (shared entity details, disclaimer language, deletion terms).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saathi Terms of Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:      #FFF8F0;
+    --cream-dark: #F5EDE0;
+    --saffron:    #FF8C00;
+    --maroon:     #7B1F1F;
+    --maroon-lt:  #9B2C2C;
+    --gold:       #C4952A;
+    --gold-dk:    #B85F00;
+    --ink:        #2C1810;
+    --ink-soft:   #4A3020;
+    --ink-muted:  #7A5C40;
+    --border:     #E8D5B7;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    font-family: 'Lora', Georgia, serif;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header {
+    background: var(--maroon);
+    color: var(--cream);
+    padding: 56px 0 44px;
+    border-bottom: 4px solid var(--gold);
+  }
+  header .eyebrow {
+    font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--saffron); font-weight: 600; margin-bottom: 14px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif; font-weight: 800;
+    font-size: 2.6rem; line-height: 1.1; color: var(--cream);
+  }
+  header .sub {
+    font-style: italic; color: rgba(255,248,240,.7);
+    margin-top: 10px; font-size: 1rem;
+  }
+  header .meta {
+    margin-top: 24px; display: flex; gap: 28px; flex-wrap: wrap;
+    font-size: .82rem; color: rgba(255,248,240,.85);
+  }
+  header .meta b { color: var(--saffron); font-weight: 600; }
+
+  main { padding: 48px 0 72px; }
+
+  .lead {
+    font-size: 1.02rem; color: var(--ink); margin-bottom: 28px;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--cream-dark); border: 1px solid var(--border);
+    border-radius: 6px; padding: 22px 26px; margin-bottom: 40px;
+  }
+  .toc h2 {
+    font-family: 'Lora', serif; font-size: .8rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--maroon); margin-bottom: 12px;
+  }
+  .toc ol { list-style: none; counter-reset: toc; columns: 2; column-gap: 32px; }
+  .toc li { counter-increment: toc; padding: 3px 0; font-size: .9rem; break-inside: avoid; }
+  .toc li::before {
+    content: counter(toc) '. '; color: var(--saffron); font-weight: 700;
+  }
+  .toc a { color: var(--ink-soft); text-decoration: none; }
+  .toc a:hover { color: var(--maroon); }
+
+  h2.section {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 1.5rem; color: var(--maroon); margin: 44px 0 14px;
+    padding-bottom: 8px; border-bottom: 2px solid var(--border);
+  }
+  h2.section .n { color: var(--saffron); margin-right: 10px; }
+  h3 {
+    font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 700;
+    color: var(--maroon-lt); margin: 26px 0 8px;
+  }
+  p { margin-bottom: 14px; font-size: .95rem; }
+  strong { color: var(--ink); font-weight: 600; }
+  a { color: var(--gold-dk); }
+
+  ul { margin: 12px 0 18px; padding-left: 0; list-style: none; }
+  ul li {
+    position: relative; padding: 5px 0 5px 24px; font-size: .93rem;
+  }
+  ul li::before {
+    content: '◆'; position: absolute; left: 2px; top: 7px;
+    color: var(--saffron); font-size: .55rem;
+  }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 16px 0 24px;
+    font-size: .84rem;
+  }
+  thead tr { background: var(--maroon); color: var(--cream); }
+  thead th { padding: 9px 12px; text-align: left; font-weight: 600; font-size: .8rem; }
+  tbody tr { border-bottom: 1px solid var(--border); }
+  tbody tr:nth-child(even) { background: var(--cream-dark); }
+  tbody td { padding: 8px 12px; vertical-align: top; }
+  tbody td:first-child { font-weight: 600; color: var(--ink); }
+
+  .callout {
+    background: linear-gradient(135deg, #FFF3E0, #FFECC8);
+    border-left: 4px solid var(--saffron);
+    border-radius: 4px; padding: 14px 18px; margin: 18px 0;
+    font-size: .9rem;
+  }
+  .callout strong { color: var(--gold-dk); }
+
+  footer {
+    background: var(--maroon); color: rgba(255,248,240,.7);
+    padding: 28px 0; font-size: .8rem; text-align: center;
+  }
+  footer b { color: var(--saffron); }
+
+  @media (max-width: 560px) {
+    header h1 { font-size: 2rem; }
+    .toc ol { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Saathi &middot; Sanatan Dharma Guide</div>
+    <h1>Terms of Service</h1>
+    <div class="sub">The agreement between you and DT IT Solutions Private Limited for use of the Saathi app</div>
+    <div class="meta">
+      <span><b>Effective date:</b> [DATE ON PUBLICATION]</span>
+      <span><b>Last updated:</b> 16 July 2026</span>
+      <span><b>Publisher:</b> DT IT Solutions Private Limited</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <p class="lead">
+    These Terms of Service (&ldquo;<strong>Terms</strong>&rdquo;) govern your access to and use of the
+    Saathi mobile application and related services (together, the &ldquo;<strong>App</strong>&rdquo; or
+    &ldquo;<strong>Saathi</strong>&rdquo;), published and operated by DT IT Solutions Private Limited.
+    Please read them carefully. <strong>By creating an account or using Saathi, you agree to be bound
+    by these Terms and by our <a href="privacy-policy.html">Privacy Policy</a>.</strong> If you do not
+    agree, please do not use the App.
+  </p>
+
+  <div class="callout">
+    <strong>Important — Saathi is for guidance and reflection only.</strong> Saathi provides
+    spiritual, devotional, and astrological content for personal reflection and education. It does
+    <strong>not</strong> provide medical, legal, financial, psychological, or professional advice, and
+    its content is not a substitute for a qualified professional. See Section 6.
+  </div>
+
+  <nav class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#who-we-are">Who we are</a></li>
+      <li><a href="#eligibility">Eligibility and accounts</a></li>
+      <li><a href="#the-service">The service Saathi provides</a></li>
+      <li><a href="#acceptable-use">Acceptable use</a></li>
+      <li><a href="#ai-content">AI-generated content</a></li>
+      <li><a href="#no-advice">No professional advice &amp; astrology disclaimer</a></li>
+      <li><a href="#your-content">Your content and licence</a></li>
+      <li><a href="#intellectual-property">Our intellectual property</a></li>
+      <li><a href="#fees">Fees, free tier, and future paid features</a></li>
+      <li><a href="#third-party">Third-party services and app stores</a></li>
+      <li><a href="#availability">Availability, changes, and beta features</a></li>
+      <li><a href="#suspension">Suspension and termination</a></li>
+      <li><a href="#disclaimers">Disclaimers of warranties</a></li>
+      <li><a href="#liability">Limitation of liability</a></li>
+      <li><a href="#indemnity">Indemnity</a></li>
+      <li><a href="#governing-law">Governing law and disputes</a></li>
+      <li><a href="#grievance">Grievance officer and contact</a></li>
+      <li><a href="#changes">Changes to these Terms</a></li>
+      <li><a href="#general">General terms</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <h2 class="section" id="who-we-are"><span class="n">1.</span>Who we are</h2>
+  <p>
+    Saathi is published and operated by DT IT Solutions Private Limited (&ldquo;<strong>DT IT
+    Solutions</strong>&rdquo;, &ldquo;<strong>we</strong>&rdquo;, &ldquo;<strong>us</strong>&rdquo;, or
+    &ldquo;<strong>our</strong>&rdquo;), a company incorporated in India under the Companies Act, 2013.
+  </p>
+  <table>
+    <tbody>
+      <tr><td>Legal entity</td><td>DT IT Solutions Private Limited</td></tr>
+      <tr><td>Corporate Identity Number (CIN)</td><td>U62013RJ2026PTC111016</td></tr>
+      <tr><td>Registered office</td><td>903, Shivgyan Heights, Ajmer Road DCM, Shyam Nagar, Jaipur, Rajasthan 302019, India</td></tr>
+      <tr><td>Contact email</td><td>info@dtitglobal.com</td></tr>
+      <tr><td>Website</td><td>dtitglobal.com</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 2 -->
+  <h2 class="section" id="eligibility"><span class="n">2.</span>Eligibility and accounts</h2>
+  <h3>2.1 You must be 18 or older</h3>
+  <p>
+    Saathi is intended for adults. You must be <strong>at least 18 years of age</strong> to create an
+    account or use the App. The App is not directed at, and we do not knowingly permit its use by,
+    persons under 18. By using Saathi, you confirm that you are 18 or older. If we learn that a person
+    under 18 has created an account, we may suspend or delete it.
+  </p>
+  <h3>2.2 Your account</h3>
+  <p>
+    To use most features you must create an account using a valid email address. You are responsible
+    for the accuracy of the information you provide, for maintaining the security of your account, and
+    for all activity that occurs under it. You agree to notify us promptly at info@dtitglobal.com if
+    you believe your account has been accessed without your authorisation. We are not liable for any
+    loss arising from unauthorised use of your account where you have failed to keep your access
+    credentials secure.
+  </p>
+
+  <!-- 3 -->
+  <h2 class="section" id="the-service"><span class="n">3.</span>The service Saathi provides</h2>
+  <p>
+    Saathi is a Hindu spiritual practice companion rooted in the Sanatan Dharma tradition. Depending on
+    the features you choose to use, the App may offer:
+  </p>
+  <ul>
+    <li>a scripture-grounded conversational guide powered by artificial intelligence, including optional voice input;</li>
+    <li>daily practice tools such as japa (mantra) tracking, sadhana (practice) logs, and scripture reading with bookmarks;</li>
+    <li>Vedic birth-chart (kundali) computation and related reports based on birth details you provide;</li>
+    <li>daily horoscope and panchang (almanac) information;</li>
+    <li>a &ldquo;Temples Near You&rdquo; discovery feature that uses your device location while the App is in use.</li>
+  </ul>
+  <p>
+    We may add, change, or remove features over time. The specific features available to you may vary
+    by device, region, and app version.
+  </p>
+
+  <!-- 4 -->
+  <h2 class="section" id="acceptable-use"><span class="n">4.</span>Acceptable use</h2>
+  <p>You agree to use Saathi lawfully and respectfully. In particular, you agree that you will <strong>not</strong>:</p>
+  <ul>
+    <li>use the App for any unlawful purpose, or in violation of any applicable law or regulation;</li>
+    <li>attempt to gain unauthorised access to the App, its servers, or any account, system, or network connected to it;</li>
+    <li>interfere with, disrupt, overload, or attempt to circumvent any security, rate-limiting, or usage-limit features of the App;</li>
+    <li>use automated means (bots, scrapers, scripts) to access the App or extract its content, except as expressly permitted;</li>
+    <li>reverse engineer, decompile, or disassemble any part of the App except to the extent this restriction is prohibited by law;</li>
+    <li>submit content that is unlawful, hateful, harassing, obscene, defamatory, or that infringes the rights of others;</li>
+    <li>attempt to manipulate, misuse, or extract the underlying AI models, prompts, or systems, or use the App to develop a competing product;</li>
+    <li>impersonate any person or misrepresent your affiliation with any person or entity;</li>
+    <li>use the App in a way that could harm, disable, or impair it, or interfere with any other user&rsquo;s use of it.</li>
+  </ul>
+  <p>
+    We may investigate and take appropriate action against anyone who, in our sole judgement, violates
+    this section, including removing content and suspending or terminating accounts.
+  </p>
+
+  <!-- 5 -->
+  <h2 class="section" id="ai-content"><span class="n">5.</span>AI-generated content</h2>
+  <p>
+    Saathi&rsquo;s guide uses artificial intelligence. When you send a message, the App retrieves
+    passages of scripture relevant to your question and sends them, together with your message and
+    relevant profile context, to a third-party AI provider that generates a response. You understand
+    and agree that:
+  </p>
+  <ul>
+    <li>AI-generated responses are produced automatically and <strong>may be inaccurate, incomplete, or inappropriate</strong> for your situation;</li>
+    <li>responses are intended for spiritual reflection and education, and you should apply your own judgement before relying on them;</li>
+    <li>the same or similar questions may produce different responses, and responses do not represent the views of DT IT Solutions;</li>
+    <li>you are responsible for how you choose to act on any content the App provides.</li>
+  </ul>
+
+  <!-- 6 -->
+  <h2 class="section" id="no-advice"><span class="n">6.</span>No professional advice &amp; astrology disclaimer</h2>
+  <p>
+    <strong>Saathi provides spiritual, devotional, and astrological content for personal reflection and
+    education only.</strong> It does not provide, and must not be relied upon as, medical, mental-health,
+    psychological, legal, financial, tax, or any other professional advice. Nothing in the App creates a
+    professional relationship between you and DT IT Solutions.
+  </p>
+  <p>
+    Astrological content &mdash; including kundali charts, horoscopes, dasha periods, dosha analysis, and
+    remedial suggestions &mdash; is offered as part of a traditional spiritual and cultural practice. It
+    is provided <strong>for guidance, interest, and reflection, and is not a prediction of, or guarantee
+    about, future events or outcomes.</strong> You should not make significant medical, legal, financial,
+    relationship, or life decisions based solely on content from the App.
+  </p>
+  <div class="callout">
+    <strong>If you are in distress or crisis</strong> &mdash; including thoughts of self-harm &mdash;
+    please contact a qualified professional or a local emergency or helpline service immediately. Saathi
+    is not an emergency service and cannot provide crisis support.
+  </div>
+
+  <!-- 7 -->
+  <h2 class="section" id="your-content"><span class="n">7.</span>Your content and licence</h2>
+  <p>
+    &ldquo;<strong>Your Content</strong>&rdquo; means the information and material you provide to the App
+    &mdash; for example, your messages, spiritual profile, birth details, practice logs, bookmarks, and
+    feedback. As between you and us, <strong>you retain ownership of Your Content.</strong>
+  </p>
+  <p>
+    You grant DT IT Solutions a limited, non-exclusive, worldwide, royalty-free licence to use, store,
+    process, reproduce, and transmit Your Content <strong>solely to operate, provide, secure, and improve
+    the App for you</strong> &mdash; for example, to generate responses, compute your charts, personalise
+    guidance, and maintain your practice history &mdash; and as otherwise described in our
+    <a href="privacy-policy.html">Privacy Policy</a>. This licence ends when Your Content is deleted,
+    except for content already shared with the service providers described in the Privacy Policy, or that
+    we must retain to comply with law. You are responsible for Your Content and confirm you have the right
+    to provide it.
+  </p>
+
+  <!-- 8 -->
+  <h2 class="section" id="intellectual-property"><span class="n">8.</span>Our intellectual property</h2>
+  <p>
+    The App, including its software, design, user interface, text, graphics, logos, the &ldquo;Saathi&rdquo;
+    name and branding, curated scripture presentation, and other materials we provide (excluding Your
+    Content and third-party or public-domain materials), is owned by or licensed to DT IT Solutions and is
+    protected by intellectual-property laws. We grant you a limited, personal, non-exclusive,
+    non-transferable, revocable licence to use the App for your own personal, non-commercial spiritual
+    practice, subject to these Terms. All rights not expressly granted are reserved. Scriptural texts
+    themselves are part of a shared spiritual heritage; our rights extend to our particular selection,
+    arrangement, translation choices, commentary, and presentation, not to the underlying sacred texts.
+  </p>
+
+  <!-- 9 -->
+  <h2 class="section" id="fees"><span class="n">9.</span>Fees, free tier, and future paid features</h2>
+  <p>
+    Saathi is currently offered <strong>free of charge</strong>. To keep the service sustainable, certain
+    features are subject to fair-use daily or lifetime limits (for example, a limit on the number of AI
+    messages per day and on complimentary detailed reports). We may change these limits at any time.
+  </p>
+  <p>
+    We may introduce paid features, subscriptions, or one-time purchases in future versions. If we do, the
+    applicable prices and terms will be presented to you before you are charged, and any purchase you make
+    through an app store will also be subject to that store&rsquo;s payment terms. Purchases of digital
+    goods and services within the App may be processed by the Apple App Store or Google Play in accordance
+    with their policies; other purchases, where offered, may be processed by a payment provider we
+    identify at the time.
+  </p>
+
+  <!-- 10 -->
+  <h2 class="section" id="third-party"><span class="n">10.</span>Third-party services and app stores</h2>
+  <p>
+    Saathi relies on third-party service providers (for example, for hosting, authentication, AI
+    processing, transcription, maps, and monitoring), as described in our
+    <a href="privacy-policy.html">Privacy Policy</a>. We are not responsible for the acts or omissions of
+    these providers beyond our own obligations to you.
+  </p>
+  <p>
+    You obtain the App through the Apple App Store or Google Play, and your use is also subject to that
+    store&rsquo;s terms. Where required by Apple, you agree that: these Terms are between you and DT IT
+    Solutions (not Apple); Apple has no obligation to provide support or maintenance for the App; and, to
+    the extent permitted by law, Apple and Google are third-party beneficiaries of these Terms with the
+    right to enforce them against you. Any App Store or Google Play claim regarding the App should be
+    directed to us at info@dtitglobal.com.
+  </p>
+
+  <!-- 11 -->
+  <h2 class="section" id="availability"><span class="n">11.</span>Availability, changes, and beta features</h2>
+  <p>
+    We work to keep Saathi available and reliable, but we do not guarantee that it will be uninterrupted,
+    timely, secure, or error-free. We may modify, suspend, or discontinue any part of the App, temporarily
+    or permanently, with or without notice. Some features may be offered on a trial, preview, or
+    &ldquo;beta&rdquo; basis and may be changed or withdrawn. We are not liable to you for any modification,
+    suspension, or discontinuation of the App or any feature.
+  </p>
+
+  <!-- 12 -->
+  <h2 class="section" id="suspension"><span class="n">12.</span>Suspension and termination</h2>
+  <p>
+    You may stop using Saathi and delete your account at any time from within the App, or by contacting us
+    at info@dtitglobal.com. Deleting your account removes your personal data as described in the Privacy
+    Policy.
+  </p>
+  <p>
+    We may suspend or terminate your access to the App, in whole or in part, if you breach these Terms,
+    if we are required to do so by law, or if we reasonably believe your use poses a risk to the App, to
+    other users, or to us. Where practicable and lawful, we will give you notice. Sections of these Terms
+    that by their nature should survive termination &mdash; including intellectual property, disclaimers,
+    limitation of liability, indemnity, and governing law &mdash; will survive.
+  </p>
+
+  <!-- 13 -->
+  <h2 class="section" id="disclaimers"><span class="n">13.</span>Disclaimers of warranties</h2>
+  <p>
+    To the fullest extent permitted by law, the App is provided <strong>&ldquo;as is&rdquo; and &ldquo;as
+    available&rdquo;</strong>, without warranties of any kind, whether express, implied, or statutory,
+    including any implied warranties of merchantability, fitness for a particular purpose, accuracy, and
+    non-infringement. We do not warrant that the App will meet your requirements, that its content
+    (including AI-generated and astrological content) will be accurate or reliable, or that any defects
+    will be corrected. Any material you access through the App is used at your own discretion and risk.
+    Some jurisdictions do not allow the exclusion of certain warranties, so some of the above may not
+    apply to you.
+  </p>
+
+  <!-- 14 -->
+  <h2 class="section" id="liability"><span class="n">14.</span>Limitation of liability</h2>
+  <p>
+    To the fullest extent permitted by law, DT IT Solutions and its directors, officers, employees, and
+    service providers will <strong>not be liable</strong> for any indirect, incidental, special,
+    consequential, exemplary, or punitive damages, or for any loss of profits, data, goodwill, or other
+    intangible losses, arising out of or relating to your use of (or inability to use) the App or your
+    reliance on any content it provides, even if we have been advised of the possibility of such damages.
+  </p>
+  <p>
+    To the fullest extent permitted by law, our total aggregate liability arising out of or relating to
+    the App or these Terms will not exceed the greater of <strong>(a) the total amount you paid us, if any,
+    for the App in the twelve months before the event giving rise to the claim, or (b) INR 1,000 (one
+    thousand Indian Rupees)</strong>. Nothing in these Terms limits any liability that cannot be limited or
+    excluded under applicable law.
+  </p>
+
+  <!-- 15 -->
+  <h2 class="section" id="indemnity"><span class="n">15.</span>Indemnity</h2>
+  <p>
+    You agree to indemnify and hold harmless DT IT Solutions and its directors, officers, and employees
+    from any claims, damages, liabilities, and reasonable expenses (including legal fees) arising out of
+    your misuse of the App, your violation of these Terms or any applicable law, or your infringement of
+    the rights of any third party, to the extent permitted by applicable law.
+  </p>
+
+  <!-- 16 -->
+  <h2 class="section" id="governing-law"><span class="n">16.</span>Governing law and disputes</h2>
+  <p>
+    These Terms are governed by the laws of India, without regard to conflict-of-laws principles. Subject
+    to applicable law, the courts at <strong>Jaipur, Rajasthan, India</strong> will have exclusive
+    jurisdiction over any dispute arising out of or relating to these Terms or the App. We encourage you to
+    contact us first at info@dtitglobal.com so we can try to resolve any concern informally.
+  </p>
+
+  <!-- 17 -->
+  <h2 class="section" id="grievance"><span class="n">17.</span>Grievance officer and contact</h2>
+  <p>
+    In accordance with applicable Indian law, including the Information Technology Act, 2000 and the rules
+    made under it, you may contact our Grievance Officer for any complaint regarding the App or content:
+  </p>
+  <table>
+    <tbody>
+      <tr><td>Grievance Officer</td><td>[NAME — designate a person]</td></tr>
+      <tr><td>Entity</td><td>DT IT Solutions Private Limited</td></tr>
+      <tr><td>Email</td><td>info@dtitglobal.com</td></tr>
+      <tr><td>Address</td><td>903, Shivgyan Heights, Ajmer Road DCM, Shyam Nagar, Jaipur, Rajasthan 302019, India</td></tr>
+    </tbody>
+  </table>
+  <p>
+    We will acknowledge complaints within the timeframes required by applicable law and work to resolve
+    them promptly. For privacy-specific requests, please also see the Grievance Officer section of our
+    <a href="privacy-policy.html">Privacy Policy</a>.
+  </p>
+
+  <!-- 18 -->
+  <h2 class="section" id="changes"><span class="n">18.</span>Changes to these Terms</h2>
+  <p>
+    We may update these Terms from time to time. When we make material changes, we will update the
+    &ldquo;Last updated&rdquo; date above and, where appropriate, notify you in the App. Your continued use
+    of Saathi after changes take effect means you accept the updated Terms. If you do not agree to a change,
+    please stop using the App and delete your account.
+  </p>
+
+  <!-- 19 -->
+  <h2 class="section" id="general"><span class="n">19.</span>General terms</h2>
+  <ul>
+    <li><strong>Entire agreement.</strong> These Terms and the Privacy Policy are the entire agreement between you and us regarding the App and supersede any prior agreements.</li>
+    <li><strong>Severability.</strong> If any provision is found unenforceable, the remaining provisions continue in full force, and the unenforceable provision will be applied to the maximum extent permitted.</li>
+    <li><strong>No waiver.</strong> Our failure to enforce any right or provision is not a waiver of that right or provision.</li>
+    <li><strong>Assignment.</strong> You may not assign these Terms without our consent. We may assign them in connection with a merger, acquisition, or sale of assets, on notice to you.</li>
+    <li><strong>No agency.</strong> Nothing in these Terms creates any partnership, agency, or employment relationship between you and us.</li>
+  </ul>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 <b>DT IT Solutions Private Limited</b> &middot; Saathi &middot; info@dtitglobal.com
+  </div>
+</footer>
+
+</body>
+</html>
