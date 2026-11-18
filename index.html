@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <!--
   Saathi — Privacy Policy
-  Updated 2026-09-26 for DT IT Solutions Private Limited (launch build).
+  Updated 2026-11-18 for DT IT Solutions Private Limited (1.4.0: coins and reward videos).
   Changes in this revision:
-   - §2.1 sign-in by mobile number (SMS code via MSG91), Google or Apple; email sign-in removed; hashed numbers kept to prevent SMS abuse.
-   - §2.2 onboarding now collects name, gender, date, place and (optional) time of birth.
-   - §2.3/§2.4 add Today's Sankalp, saved articles and For You reading activity.
-   - §2.9/§13/§14 reminders (daily shloka, festivals, Sankalp) are scheduled on the device; no server push.
-   - §5 adds MSG91, Google Sign-In, Sign in with Apple, Google place search and the connectivity check.
-   - §6 database and server hosted in Singapore.
-   - §9 email deletion route for phone-only users (confirmed on that number).
-   - §2.11/§11 18+ enforced at the date-of-birth step; guests confirm they are 18 or older.
+   - §2.12 coins, purchases (App Store / Google Play, validated by RevenueCat) and referral codes.
+   - §2.13 optional reward videos from Google AdMob (consent form, iOS tracking prompt on first tap).
+   - §5 adds Apple and Google in-app purchases, RevenueCat and Google AdMob.
+   - §7 coin history retention; §9 coin balance deleted with the account.
+   - §13 adds Tracking (iPhone) and Advertising ID (Android).
+   - §14 drops the "no third-party advertising / no tracking" line; reward videos are the only ads.
+  Previous revision 2026-09-26 (launch build): see git history.
   IMPORTANT: Have this reviewed by a qualified lawyer (India DPDP Act 2023).
 -->
 <html lang="en">
@@ -305,7 +304,7 @@
       <div class="sub">How we collect, use, and protect your information</div>
       <div class="meta">
         <span><b>Effective date:</b> 26 May 2026</span>
-        <span><b>Last updated:</b> 26 September 2026</span>
+        <span><b>Last updated:</b> 18 November 2026</span>
         <span><b>Publisher:</b> DT IT Solutions Private Limited</span>
       </div>
     </div>
@@ -459,6 +458,34 @@
         personalised commentary require you to sign in. If you later create an account, your guest activity moves to
         that account. Guest data is deleted automatically after 30 days of inactivity.</p>
 
+      <h3>2.12 Coins, purchases and referral codes</h3>
+      <p>Saathi has an in-app wallet of coins. You can buy coin packs, earn coins by choosing to watch a short video,
+        or get coins when a friend you invite creates their kundali. Coins are spent on optional extras such as
+        detailed answers and some kundali reports.</p>
+      <p>Purchases are made through the App Store or Google Play; Apple or Google takes the payment and we never see
+        or store your card, UPI or bank details. We use RevenueCat to check that a purchase is genuine and to add the
+        coins to your wallet; RevenueCat receives your Saathi account ID, the product you bought and the
+        store&rsquo;s purchase record (receipt or purchase token), plus basic device details such as the device model
+        and app version.</p>
+      <p>We keep a history of your coins: what you bought, earned and spent, and when. If you use a referral code, we
+        record which account invited which account so both coins can be credited; the person who invited you sees
+        only how many friends joined, not your name.</p>
+
+      <h3>2.13 Optional reward videos</h3>
+      <p>Saathi shows an ad only when you choose to watch a short video for free coins. No other ads appear anywhere
+        in the App. These videos come from Google AdMob, and Google&rsquo;s ad software starts only when you tap
+        &ldquo;Watch video&rdquo;. When it runs, Google collects your IP address (which can show your approximate
+        location), the device&rsquo;s advertising identifier, information about the ads you see and how you interact
+        with them, and app performance data, to show the video, measure it and prevent fraud. We send Google your
+        Saathi account ID with each video so our server can confirm you finished it and credit the coins.</p>
+      <p>Where the law requires it (for example in the EU, UK, Switzerland and some US states), Google&rsquo;s consent
+        form asks for your choice first, and you can change it any time from Profile, Ad privacy choices. On iPhone,
+        the App asks for tracking permission the first time you tap &ldquo;Watch video&rdquo;; if you say no, the
+        videos still work without your advertising identifier. You can reset or delete your advertising identifier in
+        your phone&rsquo;s settings, or simply never watch a video, in which case no ad data is collected.
+        Google&rsquo;s privacy policy:
+        <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+
       <h2 class="section" id="s3"><span class="n">3.</span>How we use your information</h2>
       <p>We use your information to:</p>
       <ul>
@@ -559,6 +586,23 @@
             <td>Sign-in details from Apple</td>
           </tr>
           <tr>
+            <td>Apple and Google</td>
+            <td>In-app purchase payments through the App Store and Google Play</td>
+            <td>Payment details, which Apple or Google handle directly; we never see them</td>
+          </tr>
+          <tr>
+            <td>RevenueCat</td>
+            <td>Purchase validation and coin credits</td>
+            <td>Your Saathi account ID, the product you bought, the store&rsquo;s purchase record and basic device
+              details</td>
+          </tr>
+          <tr>
+            <td>Google AdMob</td>
+            <td>Optional reward videos (only when you tap &ldquo;Watch video&rdquo;)</td>
+            <td>IP address, advertising identifier, ad interaction and app performance data, and your Saathi account
+              ID, as described in Section 2.13</td>
+          </tr>
+          <tr>
             <td>Anthropic</td>
             <td>AI processing of conversations and related text generation</td>
             <td>As described in Section 4</td>
@@ -611,6 +655,9 @@
         <li>the one-way hash of a mobile number in our SMS logs is kept for a limited period to prevent abuse, and is
           not linked to your account;</li>
         <li>diagnostic data is kept for a limited period for debugging and security;</li>
+        <li>coin history is kept while your account exists and is deleted with it;</li>
+        <li>store purchase records may also be kept by Apple, Google and RevenueCat as their own policies and the law
+          require;</li>
         <li>records of actions our administrators take are kept for security, but no longer identify you once your
           account is deleted.</li>
       </ul>
@@ -651,6 +698,8 @@
       </div>
       <p>We action verified requests within a reasonable period. Deleting your account removes your profile, birth
         details, conversations, practice logs, Sankalp, reading activity, saved articles and kundali profiles.</p>
+      <p>Deleting your account also deletes your coin balance. Unused coins can&rsquo;t be refunded or moved to another
+        account.</p>
       <p>If you use Saathi <strong>as a guest</strong>, your data is not linked to a mobile number or email. It is
         removed when you delete it in the App, and deleted automatically after 30 days of inactivity.</p>
 
@@ -704,6 +753,14 @@
             <td>Notifications</td>
             <td>To show the reminders you choose: daily shloka, festivals and Sankalp</td>
           </tr>
+          <tr>
+            <td>Tracking (iPhone only)</td>
+            <td>Asked the first time you tap &ldquo;Watch video&rdquo;, never at launch, and optional</td>
+          </tr>
+          <tr>
+            <td>Advertising ID (Android)</td>
+            <td>Used by Google AdMob only for reward videos</td>
+          </tr>
         </tbody>
       </table>
       <p>Each permission is requested only when the related feature is first used or offered, and you can change or
@@ -713,8 +770,9 @@
       <ul>
         <li>We do not sell or rent your personal data.</li>
         <li>We do not collect payment-card or bank-account information.</li>
-        <li>We do not use your data to serve third-party advertising, and we do not track you across other apps or
-          websites.</li>
+        <li>We never use your conversations, kundali, birth details, religious beliefs or practice logs for
+          advertising.</li>
+        <li>The only advertising in Saathi is the optional reward video, served by Google AdMob as described above.</li>
         <li>We do not send push notifications from our servers.</li>
         <li>We do not knowingly collect data from children under 18.</li>
       </ul>
@@ -756,7 +814,7 @@
   <footer>
     <div class="wrap">
       &copy; 2026 <b>DT IT Solutions Private Limited</b>. All rights reserved.<br>
-      Saathi — Privacy Policy &middot; Last updated 26 September 2026
+      Saathi — Privacy Policy &middot; Last updated 18 November 2026
     </div>
   </footer>
 
