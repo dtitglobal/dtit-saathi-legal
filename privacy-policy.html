@@ -508,8 +508,11 @@
         identifier described in Section 2.11).</p>
       <p>Like most analytics software, these two providers also collect technical information about your device on
         their own account: the device make, model and operating system version, the app version, your language,
-        region and time zone, and your IP address, from which an approximate location (country, region and city) can
-        be worked out. Linkrunner additionally reads the advertising and device identifiers the platform gives it
+        region and time zone. PostHog is configured to discard your IP address, so it is not stored with your
+        records, and we have switched off the feature that works out a country, region or city from it. PostHog
+        therefore holds no IP address for you and no location derived from one.</p>
+      <p>Linkrunner does record your IP address, from which an approximate location (country, region and city) can be
+        worked out. Linkrunner additionally reads the advertising and device identifiers the platform gives it
         &mdash; on Android the advertising ID, the Android ID, the App Set ID and the Google Play install referrer;
         on iPhone the vendor identifier and Apple&rsquo;s attribution token. On iPhone, Linkrunner is configured not
         to use the advertising identifier (IDFA) at all and never shows a tracking prompt of its own; it uses
@@ -519,6 +522,10 @@
         including the identifiers above and the approximate location worked out from your IP address, back to the
         advertising network that showed you our advertisement, so that network can match the install to its own
         campaign.</p>
+      <p>Our campaign links also go through Linkrunner before they reach the App or the app store. When you tap a
+        Saathi link on <strong>go.dtitglobal.com</strong>, Linkrunner records the click &mdash; including your device
+        and browser details and your IP address &mdash; even if the App is never installed. This is used only to work
+        out which link or advertisement led to an install.</p>
       <p>We do not sell this data, and we do not use it to target you with advertising inside Saathi. We have turned
         off screen and session recording, and the App does not automatically capture your taps or what you type: only
         the named actions above are sent. Accounts used by the app stores&rsquo; review teams and our own internal
@@ -653,8 +660,9 @@
           <tr>
             <td>PostHog (United States)</td>
             <td>Product analytics &mdash; measuring how the App is used</td>
-            <td>The named actions in Section 2.14 and their labels, your Saathi account ID, and device, app, language
-              and IP information collected by its software</td>
+            <td>The named actions in Section 2.14 and their labels, your Saathi account ID, and the device, app and
+              language information collected by its software. Its IP capture is switched off, so PostHog stores no IP
+              address for you and works out no location from one</td>
           </tr>
           <tr>
             <td>Linkrunner (United States)</td>
@@ -705,8 +713,9 @@
       <h2 class="section" id="s6"><span class="n">6.</span>Where your data is processed</h2>
       <p>Our database and server are hosted in Singapore. Our SMS provider processes your number in India. Some of our
         other providers, including our AI providers and RevenueCat (for purchase validation), process data in the
-        United States. Our product analytics provider PostHog receives data on its United States cloud service, and
-        our attribution provider Linkrunner is a United States company; data sent to either leaves India. Google
+        United States. Our product analytics provider PostHog receives data on its United States cloud service (it is
+        configured not to store your IP address, and no location is worked out from it), and our attribution provider
+        Linkrunner is a United States company; data sent to either leaves India. Google
         AdMob, which provides the optional reward videos, processes data on Google&rsquo;s
         servers, which may be outside India. Where your data is transferred
         outside India, we take steps to keep it protected in line with this policy and applicable law.</p>
@@ -727,8 +736,9 @@
           require;</li>
         <!-- 1.4.1 DRAFT -->
         <li>product analytics and attribution records are kept by PostHog and Linkrunner under their own retention
-          periods, currently up to [PLACEHOLDER &mdash; confirm with Rajat] for PostHog; deleting your account removes
-          the records held under your Saathi account ID;</li>
+          periods. For PostHog this is currently one year on the plan we use; expired records are cleared out monthly,
+          so a record may remain for up to about two months longer. Linkrunner keeps attribution records under its own
+          policy. Deleting your account removes the records held under your Saathi account ID;</li>
         <li>records of actions our administrators take are kept for security, but no longer identify you once your
           account is deleted.</li>
       </ul>
