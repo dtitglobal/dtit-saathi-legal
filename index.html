@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <!--
   Saathi — Privacy Policy
-  Updated 2026-11-18 for DT IT Solutions Private Limited (1.4.0: coins and reward videos).
+  Updated 2026-11-27 for DT IT Solutions Private Limited (1.4.1: analytics, attribution, sign-in security).
   Changes in this revision:
-   - §2.12 coins, purchases (App Store / Google Play, validated by RevenueCat) and referral codes.
-   - §2.13 optional reward videos from Google AdMob (consent form, iOS tracking prompt on first tap).
-   - §5 adds Apple and Google in-app purchases, RevenueCat and Google AdMob.
-   - §7 coin history retention; §9 coin balance deleted with the account.
-   - §13 adds Tracking (iPhone) and Advertising ID (Android).
-   - §14 drops the "no third-party advertising / no tracking" line; reward videos are the only ads.
-  Previous revision 2026-09-26 (launch build): see git history.
+   - §2.1 adds the Cloudflare Turnstile security check that may load during sign-in.
+   - §2.4 reading activity: what the product analytics provider is told about an article.
+   - §2.13 reward videos may be switched on or off; the AdMob text applies when they are on.
+   - §2.14 new: PostHog product analytics and Linkrunner install attribution, with Apple's SKAdNetwork report.
+   - §5 adds PostHog, Linkrunner and Cloudflare; §6 and §7 cover those records and how long they are kept.
+   - §13 advertising ID (Android) covers AdMob and Linkrunner, with the reset and deletion remedies.
+   - §14 reward videos stay the only ads inside the App, and none appear when they are off.
+  Previous revision 2026-11-18 (1.4.0: coins and reward videos): see git history.
   IMPORTANT: Have this reviewed by a qualified lawyer (India DPDP Act 2023).
 -->
 <html lang="en">
@@ -304,8 +305,7 @@
       <div class="sub">How we collect, use, and protect your information</div>
       <div class="meta">
         <span><b>Effective date:</b> 26 May 2026</span>
-        <!-- 1.4.1 DRAFT -->
-        <span><b>Last updated:</b> [DRAFT &mdash; set the publication date]</span>
+        <span><b>Last updated:</b> 27 November 2026</span>
         <span><b>Publisher:</b> DT IT Solutions Private Limited</span>
       </div>
     </div>
@@ -391,6 +391,9 @@
       </ul>
       <p>To prevent abuse of our SMS service, we keep a one-way hash of each number we send a code to. The hash cannot
         be turned back into your number.</p>
+      <p>During sign-in, a security check from Cloudflare (Turnstile) may load to confirm that the request comes from a
+        person and not an automated script. When it loads, Cloudflare sees your IP address and basic browser or device
+        details, and uses them only to stop automated abuse.</p>
 
       <h3>2.2 Profile information</h3>
       <p>During onboarding you give your name, gender, date of birth and place of birth (with its approximate
@@ -410,7 +413,6 @@
         <li>articles you save, your reading progress, and any feedback you send us from the App.</li>
       </ul>
 
-      <!-- 1.4.1 DRAFT -->
       <h3>2.4 Reading activity</h3>
       <p>When you use the For You articles, we record which articles you open, how long you read, how far you get, and
         your app language, platform and app version. This is linked to your account or guest identifier. We use it to
@@ -476,6 +478,8 @@
         only how many friends joined, not your name.</p>
 
       <h3>2.13 Optional reward videos</h3>
+      <p>Reward videos are optional and may be switched on or off from time to time. When they are on, the following
+        applies:</p>
       <p>Saathi shows an ad only when you choose to watch a short video for free coins. No other ads appear anywhere
         in the App. These videos come from Google AdMob, and Google&rsquo;s ad software starts only when you tap
         &ldquo;Watch video&rdquo;. When it runs, Google collects your IP address (which can show your approximate
@@ -490,7 +494,6 @@
         Google&rsquo;s privacy policy:
         <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
 
-      <!-- 1.4.1 DRAFT -->
       <h3>2.14 Product analytics and how people find Saathi</h3>
       <p>We measure how Saathi is used, and which of our own links and advertisements bring people to the App. This
         tells us which features are worth building on, where people get stuck, and whether our marketing spend is
@@ -516,7 +519,9 @@
         &mdash; on Android the advertising ID, the Android ID, the App Set ID and the Google Play install referrer;
         on iPhone the vendor identifier and Apple&rsquo;s attribution token. On iPhone, Linkrunner is configured not
         to use the advertising identifier (IDFA) at all and never shows a tracking prompt of its own; it uses
-        Apple&rsquo;s privacy-preserving SKAdNetwork instead.</p>
+        Apple&rsquo;s privacy-preserving SKAdNetwork instead. Through SKAdNetwork, Apple sends a copy of its
+        install-attribution report to Linkrunner (linkrunner-skan.com). That report comes from Apple, and no
+        advertising identifier is used for it.</p>
       <p>When you buy coins, our purchase provider RevenueCat tells Linkrunner from our server that a purchase
         happened, so we can see whether a campaign paid for itself. Linkrunner may pass attribution information,
         including the identifiers above and the approximate location worked out from your IP address, back to the
@@ -552,7 +557,6 @@
         <li>use your purchase and coin records to credit coins, show your wallet and coin history and handle refunds,
           and use reward video events (verified by Google AdMob) to credit reward coins and enforce the daily
           limit;</li>
-        <!-- 1.4.1 DRAFT -->
         <li>measure how the App is used, and which of our own links and advertisements bring people to Saathi, so we
           can improve the App and judge our marketing (Section 2.14);</li>
         <li>monitor, diagnose and fix technical problems, keep the App secure, and prevent abuse of our SMS service;</li>
@@ -640,6 +644,11 @@
             <td>Sign-in details from Apple</td>
           </tr>
           <tr>
+            <td>Cloudflare</td>
+            <td>Security check during sign-in (Turnstile), when it is shown</td>
+            <td>Your IP address and basic browser or device details, used only to stop automated abuse</td>
+          </tr>
+          <tr>
             <td>Apple and Google</td>
             <td>In-app purchase payments through the App Store and Google Play</td>
             <td>Payment details, which Apple or Google handle directly; we never see them</td>
@@ -652,11 +661,11 @@
           </tr>
           <tr>
             <td>Google AdMob</td>
-            <td>Optional reward videos (only when you tap &ldquo;Watch video&rdquo;)</td>
+            <td>Optional reward videos, when they are switched on (and only when you tap &ldquo;Watch
+              video&rdquo;)</td>
             <td>IP address, advertising identifier, ad interaction and app performance data, and your Saathi account
               ID, as described in Section 2.13</td>
           </tr>
-          <!-- 1.4.1 DRAFT -->
           <tr>
             <td>PostHog (United States)</td>
             <td>Product analytics &mdash; measuring how the App is used</td>
@@ -669,9 +678,10 @@
             <td>Install attribution &mdash; which link or advertisement brought you to Saathi</td>
             <td>Sign-up, first kundali, coin purchase and reward video events, your Saathi account ID, device and
               advertising identifiers, the install referrer, and IP information, as described in Section 2.14; it may
-              pass attribution information on to the advertising network that showed our advertisement</td>
+              pass attribution information on to the advertising network that showed our advertisement. On iPhone,
+              Apple&rsquo;s SKAdNetwork also sends it a copy of Apple&rsquo;s install-attribution report
+              (linkrunner-skan.com), for which no advertising identifier is used</td>
           </tr>
-          <!-- /1.4.1 DRAFT -->
           <tr>
             <td>Anthropic</td>
             <td>AI processing of conversations and related text generation</td>
@@ -709,7 +719,6 @@
         merger, acquisition or sale of assets, personal data may be transferred as part of that transaction; we will
         notify you of any such change.</p>
 
-      <!-- 1.4.1 DRAFT -->
       <h2 class="section" id="s6"><span class="n">6.</span>Where your data is processed</h2>
       <p>Our database and server are hosted in Singapore. Our SMS provider processes your number in India. Some of our
         other providers, including our AI providers and RevenueCat (for purchase validation), process data in the
@@ -734,7 +743,6 @@
         <li>coin history is kept while your account exists and is deleted with it;</li>
         <li>store purchase records may also be kept by Apple, Google and RevenueCat as their own policies and the law
           require;</li>
-        <!-- 1.4.1 DRAFT -->
         <li>product analytics and attribution records are kept by PostHog and Linkrunner under their own retention
           periods. For PostHog this is currently one year on the plan we use; expired records are cleared out monthly,
           so a record may remain for up to about two months longer. Linkrunner keeps attribution records under its own
@@ -834,7 +842,6 @@
             <td>Notifications</td>
             <td>To show the reminders you choose: daily shloka, festivals and Sankalp</td>
           </tr>
-          <!-- 1.4.1 DRAFT -->
           <tr>
             <td>Tracking (iPhone only)</td>
             <td>Asked the first time you tap &ldquo;Watch video&rdquo;, never at launch, and optional. It is asked for
@@ -842,10 +849,10 @@
           </tr>
           <tr>
             <td>Advertising ID (Android)</td>
-            <td>Used by Google AdMob for the reward videos, and to work out which link or advertisement brought you to
-              Saathi (Section 2.14)</td>
+            <td>Used by Google AdMob for reward videos (when on) and by Linkrunner to work out which link or
+              advertisement brought you to Saathi (Section 2.14). You can reset or delete your advertising ID in your
+              phone&rsquo;s settings. Deleting your account removes the records we hold under your account ID</td>
           </tr>
-          <!-- /1.4.1 DRAFT -->
         </tbody>
       </table>
       <p>Each permission is requested only when the related feature is first used or offered, and you can change or
@@ -857,12 +864,10 @@
         <li>We do not collect payment-card or bank-account information.</li>
         <li>We never use your conversations, kundali, birth details, religious beliefs or practice logs for
           advertising.</li>
-        <!-- 1.4.1 DRAFT -->
-        <li>The only advertisements shown inside Saathi are the optional reward videos, served by Google AdMob as
-          described above. We do measure which of our own advertisements and links bring people to Saathi, as
-          described in Section 2.14.</li>
+        <li>When reward videos are switched on, they are the only advertisements shown inside Saathi, served by
+          Google AdMob as described above; when they are off, no advertisements appear at all. We do measure which of
+          our own advertisements and links bring people to Saathi, as described in Section 2.14.</li>
         <li>We do not record your screen, and we do not automatically capture your taps or what you type.</li>
-        <!-- /1.4.1 DRAFT -->
         <li>We do not send push notifications from our servers.</li>
         <li>We do not knowingly collect data from children under 18.</li>
       </ul>
@@ -904,8 +909,7 @@
   <footer>
     <div class="wrap">
       &copy; 2026 <b>DT IT Solutions Private Limited</b>. All rights reserved.<br>
-      <!-- 1.4.1 DRAFT -->
-      Saathi — Privacy Policy &middot; Last updated [DRAFT &mdash; set the publication date]
+      Saathi — Privacy Policy &middot; Last updated 27 November 2026
     </div>
   </footer>
 
