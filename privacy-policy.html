@@ -504,11 +504,16 @@
         created; a kundali was created; a question was asked; a report was unlocked; a reward video was watched; coins
         were bought; an article was opened; an account was deleted. With each action we send only counts, yes/no flags
         and short labels, such as your app language, whether you are a guest, whether a kundali had a birth time, how
-        many coins were spent, and which coin pack was bought.</p>
+        many coins were spent, which coin pack was bought, which practice you logged, and the general subject of a
+        check-in (for example health or work).</p>
+      <p>We also record which screen of the App you are on, as the screen&rsquo;s name in the App&rsquo;s own menu
+        structure (for example &ldquo;the birth-chart matching screen&rdquo;), never the web address or any identifier
+        it contains.</p>
       <p>We do <strong>not</strong> send them your conversations or the text of your questions, your birth date, time
         or place, your name, mobile number or email address, the titles of articles you read, your referral code, or
         the price you paid. The only identifier we attach is your Saathi account ID (for a guest, the anonymous
-        identifier described in Section 2.11).</p>
+        identifier described in Section 2.11). We also give Linkrunner the identifier our analytics provider uses for
+        you, so the two records can be matched.</p>
       <p>Like most analytics software, these two providers also collect technical information about your device on
         their own account: the device make, model and operating system version, the app version, your language,
         region and time zone. PostHog is configured to discard your IP address, so it is not stored with your
@@ -676,8 +681,9 @@
           <tr>
             <td>Linkrunner (United States)</td>
             <td>Install attribution &mdash; which link or advertisement brought you to Saathi</td>
-            <td>Sign-up, first kundali, coin purchase and reward video events, your Saathi account ID, device and
-              advertising identifiers, the install referrer, and IP information, as described in Section 2.14; it may
+            <td>Sign-up and first-kundali events only, your Saathi account ID, device and advertising
+              identifiers, the install referrer, and IP information, as described in Section 2.14; coin purchases
+              reach it from our server through RevenueCat, not from the App; it may
               pass attribution information on to the advertising network that showed our advertisement. On iPhone,
               Apple&rsquo;s SKAdNetwork also sends it a copy of Apple&rsquo;s install-attribution report
               (linkrunner-skan.com), for which no advertising identifier is used</td>
@@ -868,7 +874,8 @@
         <li>When reward videos are switched on, they are the only advertisements shown inside Saathi, served by
           Google AdMob as described above; when they are off, no advertisements appear at all. We do measure which of
           our own advertisements and links bring people to Saathi, as described in Section 2.14.</li>
-        <li>We do not record your screen, and we do not automatically capture your taps or what you type.</li>
+        <li>We do not record your screen, and apart from the name of the screen you are on we do not
+          automatically capture your taps or what you type.</li>
         <li>We do not send push notifications from our servers.</li>
         <li>We do not knowingly collect data from children under 18.</li>
       </ul>
