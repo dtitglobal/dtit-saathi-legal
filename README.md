@@ -2,3 +2,5 @@
 
 Legal documents for the Saathi app, published by DT IT Solutions Private Limited.
 Privacy policy: https://dtitglobal.github.io/dtit-saathi-legal/
+
+Internal drafts and working notes for these documents live in the private saathi repo (`docs/<version>/`), not here.
